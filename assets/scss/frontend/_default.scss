@@ -1,0 +1,100 @@
+/* VIEWPORT */
+@-webkit-viewport {
+    width: device-width
+}
+
+@-moz-viewport {
+    width: device-width
+}
+
+@-ms-viewport {
+    width: device-width
+}
+
+@-o-viewport {
+    width: device-width
+}
+
+@viewport {
+    width: device-width
+}
+
+/****************************************
+
+ELEMENTS
+
+*****************************************/
+
+body {
+    color: #121212;
+    font-family: 'Noto Serif JP', sans-serif;
+    font-size: 1em;
+    line-height: 1;
+}
+
+.h1 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 3.5em;
+    margin-bottom: 0;
+}
+
+.h3 {
+    font-family: 'Noto Serif JP', sans-serif;
+    font-size: 1.05em;
+    font-weight:700;
+    text-transform: uppercase;
+}
+
+.large-print {
+    color: rgba($midnightblue, 0.75);
+    font-size: 1.2em;
+}
+
+figure {
+    background: $lavender;
+    overflow: hidden;
+    position: relative;
+    transition: all .5s;
+
+    &:hover {
+        background: transparent;
+    }
+
+    &:before {
+        color: white;
+        content: '-';
+        left: 90%;
+        top: -20%;
+        position: absolute;
+        z-index: 1;
+        transform: rotate(-35deg);
+    }
+
+    &:hover:before {
+        left: -10%;
+        top: 50%;
+        transition: all 1s;
+    }
+
+    img {
+        mix-blend-mode: luminosity;
+    }
+}
+
+/* MODIFIERS */
+
+
+._hide { display: none !important;}
+
+/*
+@media print, screen and (max-width: 479px) {
+  ._hide-for-mobile {
+    display:none;
+  }
+}
+@media print, screen and (min-width: 480px) {
+  ._hide-for-desktop {
+    display:none;
+  }
+}
+*/

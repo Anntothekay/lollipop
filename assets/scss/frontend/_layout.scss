@@ -1,0 +1,197 @@
+/* HEADER / FOOTER */
+
+#header,
+#footer {
+    nav {
+        ul {
+            list-style: none;
+            margin: 0;
+
+            li {
+                a {
+                    display: block;
+                    transition: all .1s linear;
+                }
+            }
+        }
+    }
+}
+
+/* HEADER */
+
+#header {
+    background: $lavender url('https://picsum.photos/1920/500?image=974') center center no-repeat;
+    background-size: cover;
+    background-blend-mode: luminosity;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
+    //  mask: url('http://fractalweave.com/img/fractal-top-border-silhouette2.png') left top no-repeat;
+    //  mask-size:100%;
+    min-height: 15em;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+
+        .logo {
+            color: $lavender;
+            font-family: 'Amatic SC', cursive;
+            font-size: 2.25em;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-bottom: 1em;
+            padding-top: 1em;
+            text-align: right;
+
+            li {
+                display: block;
+                margin-left: 1em;
+
+                a {
+                    color: lavender;
+                    font-weight:700;
+                    letter-spacing: 0.05rem;
+//                    text-shadow: 0 1px 2px $midnightblue;
+                    &:before {
+                        content: '.';
+                    }
+                }
+            }
+        }
+
+        .toggle-menu {
+            cursor: pointer;
+            border-radius: 0;
+            display: inline-block;
+            height: 1.5em;
+            margin-bottom: -0.35rem;
+            overflow: hidden;
+            position: relative;
+            text-indent: -999em;
+            width: 1.35em;
+            z-index: 3
+        }
+
+        .toggle-menu:before,
+        .toggle-menu:after {
+            border-bottom: 2px solid $lavender;
+            content: "";
+            left: 0;
+            position: absolute;
+            transition: all .5s;
+            transform-origin: center center;
+            width: 100%
+        }
+
+        .toggle-menu:before {
+            top: 25%;
+        }
+
+        .toggle-menu:after {
+            bottom: 25%;
+        }
+    }
+
+    #overlay-menu.on + nav ul li.toggle-menu {
+        &:before {
+            transform: rotate(-45deg);
+            top: calc(50% - 1px);
+        }
+
+        &:after {
+            transform: rotate(45deg);
+            bottom: calc(50% - 1px);
+        }
+    }
+}
+
+/*  FOOTER */
+
+#footer {
+    background: $midnightblue;
+    background: linear-gradient(to bottom, $midnightblue 0%, rgba(50, 50, 82, 1) 1%, rgba(12, 16, 33, 1) 100%);
+    border-top: solid .75rem #36383F;
+    box-shadow: 0 -3px 0px rgba(0, 0, 0, 0.3);
+
+    nav {
+        padding-bottom: 1em;
+        padding-top: 1em;
+
+        ul {
+            li {
+                padding: .75em 0;
+                border-bottom: solid thin rgba(255, 255, 255, 0.15);
+
+                a {
+                    color: $lavender;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+/* CONTENT */
+
+article {
+    padding: 4em 0;
+}
+
+
+/* MEDIA QUERIES */
+
+@media print,
+screen and (max-width: 479px) {
+    #header nav ul li {
+        margin-bottom: .35em;
+    }
+
+    #footer nav {
+        padding-bottom: 2em;
+    }
+}
+
+@media print,
+screen and (min-width: 480px) {
+    #header nav ul li {
+        display: inline-block;
+    }
+}
+
+@media print,
+screen and (min-width: 640px) {
+    #header nav ul li {
+        margin-left: 2em;
+
+        a {
+            &:hover {
+                color: white;
+                text-shadow: 1px 1px 0 $midnightblue;
+                transform: rotateZ(10deg) scale(2) translate(-10%, 0);
+            }
+        }
+    }
+
+    #footer nav ul li {
+        &:last-child {
+            border-bottom: none;
+        }
+
+        a {
+            &:hover {
+                font-weight: 700;
+                text-shadow: 0 0 2px rgba(255, 255, 255, 1);
+                transform: scale(1.2);
+                transform-origin: left center;
+            }
+
+            //    &:hover:before {
+            //      content:'.';
+            //   }
+
+        }
+    }
+}
