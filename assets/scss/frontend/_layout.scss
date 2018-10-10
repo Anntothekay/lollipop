@@ -50,10 +50,13 @@
             font-weight: 700;
             margin: 1rem 0;
             mix-blend-mode: luminosity;
+            text-shadow:0 0 0 rgba($lightseagreen,1);
             &:hover {
-                color:$coral;
+                color:$lightseagreen;
                 mix-blend-mode:normal;
-                text-shadow:2px 0 0 $lavender;
+                text-shadow:0 0 300px rgba($lightseagreen,0.1);
+                transition:all.7s;
+
             }
         }
 
@@ -184,12 +187,12 @@ screen and (min-width: 640px) {
 
         a {
             &:hover {
-                color: $coral;
+                color: $lightseagreen;
                 text-shadow: 1px 1px 0 $midnightblue;
                 transform: rotateZ(10deg) scale(2) translate(-10%, 0);
             }
             &.active {
-                color: $coral;
+                color: $lightseagreen;
                 text-shadow: 1px 1px 0 $midnightblue;
                 transform: rotateZ(10deg) scale(2) translate(-10%, 0);
             }
