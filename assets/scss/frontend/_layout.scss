@@ -50,17 +50,10 @@
             font-weight: 700;
             margin: 1rem 0;
             mix-blend-mode: luminosity;
-
-            &:after {
-                content: '\1F36C';
-                display: inline-block;
-                transform: translate(0, -3em);
-                transition: all .5s;
-            }
-
-            &:hover:after {
-                animation: candy 1s ease-out normal 1;
-                transform: translate(0, 0) rotate(100deg);
+            &:hover {
+                color:$coral;
+                mix-blend-mode:normal;
+                text-shadow:2px 0 0 $lavender;
             }
         }
 
@@ -78,7 +71,7 @@
                     font-weight: 700;
                     letter-spacing: 0.05rem;
 
-                    //                    text-shadow: 0 1px 2px $midnightblue;
+//                  text-shadow: 0 1px 2px $midnightblue;
                     &:before {
                         content: '.';
                     }
@@ -136,9 +129,8 @@
 
 #footer {
     background: $midnightblue;
-    background: linear-gradient(to bottom, $midnightblue 0%, rgba(50, 50, 82, 1) 1%, rgba(12, 16, 33, 1) 100%);
+    background: linear-gradient(to top left, $midnightblue 0%, rgba(50, 50, 82, 1) 1%, rgba(12, 16, 33, 1) 100%);
     border-top: solid .75rem #36383F;
-    box-shadow: 0 -3px 0px rgba(0, 0, 0, 0.3);
 
     nav {
         padding-bottom: 1em;
@@ -164,22 +156,6 @@ article {
     padding: 4em 0;
 }
 
-
-/* ANIMATIONS */
-
-@keyframes candy {
-    0% {
-        transform: translate(0, -10em) rotate(-260deg);
-    }
-
-    35% {
-        transform: translate(0, 0) rotate(-260deg);
-    }
-
-    100% {
-        transform: translate(0, 0) rotate(100deg);
-    }
-}
 
 /* MEDIA QUERIES */
 
@@ -208,7 +184,12 @@ screen and (min-width: 640px) {
 
         a {
             &:hover {
-                color: white;
+                color: $coral;
+                text-shadow: 1px 1px 0 $midnightblue;
+                transform: rotateZ(10deg) scale(2) translate(-10%, 0);
+            }
+            &.active {
+                color: $coral;
                 text-shadow: 1px 1px 0 $midnightblue;
                 transform: rotateZ(10deg) scale(2) translate(-10%, 0);
             }
@@ -231,7 +212,6 @@ screen and (min-width: 640px) {
             //    &:hover:before {
             //      content:'.';
             //   }
-
         }
     }
 }

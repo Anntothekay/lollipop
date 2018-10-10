@@ -36,12 +36,15 @@ body {
     font-family: 'Amatic SC', cursive;
     font-size: 3.5em;
     margin-bottom: 0;
+//    text-shadow:2px 1px 2px $coral;
 }
 
 .h3 {
+    color:$coral;
     font-family: 'Noto Serif JP', sans-serif;
     font-size: 1.05em;
     font-weight:700;
+    text-shadow:0 1px 1px rgba(0,0,0,0.2);
     text-transform: uppercase;
 }
 
@@ -55,9 +58,10 @@ figure {
     overflow: hidden;
     position: relative;
     transition: all .5s;
+    z-index:3;
 
     &:hover {
-        background: transparent;
+        background: none;
     }
 
     &:before {
