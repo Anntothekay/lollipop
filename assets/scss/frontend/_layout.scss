@@ -46,20 +46,21 @@
         .logo {
             color: $lavender;
             font-family: 'Amatic SC', cursive;
-            font-size: 2.25em;
+            font-size: 2.5em;
             font-weight: 700;
             margin: 1rem 0;
             mix-blend-mode: luminosity;
 
             &:after {
                 content: '\1F36C';
-                transform: rotate(100deg);
                 display: inline-block;
+                transform: translate(0, -3em);
                 transition: all .5s;
             }
 
             &:hover:after {
-                transform: rotate(-260deg);
+                animation: candy 1s ease-out normal 1;
+                transform: translate(0, 0) rotate(100deg);
             }
         }
 
@@ -163,6 +164,22 @@ article {
     padding: 4em 0;
 }
 
+
+/* ANIMATIONS */
+
+@keyframes candy {
+    0% {
+        transform: translate(0, -10em) rotate(-260deg);
+    }
+
+    35% {
+        transform: translate(0, 0) rotate(-260deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(100deg);
+    }
+}
 
 /* MEDIA QUERIES */
 
