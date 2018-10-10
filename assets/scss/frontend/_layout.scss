@@ -23,11 +23,21 @@
     background: $lavender url('https://picsum.photos/1920/500?image=974') center center no-repeat;
     background-size: cover;
     background-blend-mode: luminosity;
-    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
-    //  mask: url('http://fractalweave.com/img/fractal-top-border-silhouette2.png') left top no-repeat;
-    //  mask-size:100%;
+    //    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
+    //    mask: url('http://fractalweave.com/img/fractal-top-border-silhouette2.png') left top no-repeat;
+    //    mask-size:100%;
     min-height: 15em;
+    position: relative;
 
+    //    &:after {
+    //        background: $lavender url("") center center no-repeat;
+    //        content:'';
+    //        position:absolute;
+    //        left:0;
+    //        bottom:-3em;
+    //        height:3em;
+    //        width:100%;
+    //    }
     nav {
         display: flex;
         justify-content: space-between;
@@ -39,6 +49,18 @@
             font-size: 2.25em;
             font-weight: 700;
             margin: 1rem 0;
+            mix-blend-mode: luminosity;
+
+            &:after {
+                content: '\1F36C';
+                transform: rotate(100deg);
+                display: inline-block;
+                transition: all .5s;
+            }
+
+            &:hover:after {
+                transform: rotate(-260deg);
+            }
         }
 
         ul {
@@ -52,9 +74,10 @@
 
                 a {
                     color: $lavender;
-                    font-weight:700;
+                    font-weight: 700;
                     letter-spacing: 0.05rem;
-//                    text-shadow: 0 1px 2px $midnightblue;
+
+                    //                    text-shadow: 0 1px 2px $midnightblue;
                     &:before {
                         content: '.';
                     }
