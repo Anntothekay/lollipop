@@ -12,4 +12,8 @@ $(function () {
       $('#overlay-menu').removeClass('on');
     };
   });
+    lightGallery(document.getElementById('lightgallery'), {
+        mode: 'lg-slide-skew-ver-cross-rev',
+
+})
 });
